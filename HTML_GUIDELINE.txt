@@ -1,0 +1,223 @@
+Create DocType
+    <!DOCTYPE html>
+HTML Body 
+    <html></html>
+Comments
+    <!-- -->
+
+
+Head/Website Title 
+    <head> </head>
+Title (placed in head)
+    <title> </title>
+Text Defaults
+    <meta chatset="">
+        UTF-8 is standard
+Viewport (for responsive design/mobile devices)
+    <meta name="viewport" content="width=device-width, initial-scale=1.0".>
+Favicon <!-- .ico .png .gif .jpg .svg-->
+    <link rel="icon" type="image/type" href="">
+Stylesheet
+    <link rel="stylesheet" href="style.css">
+
+
+Body/Content In Website
+    <body> </body>
+Header Types (contained in body)
+    <h1> </h1>
+    <h2>  </h2>
+    and so on
+Paragraph
+    <p> </p>
+    <pre> </pre> (Preformatted Text)
+Break (add a break)
+    <br>
+Horizontal Rule (add a horizontal line)
+    <hr>
+Span Tag
+    <span style="background-color:red;"> </span>
+Div (Tag Division)
+    <div style="background-color:red;"> </div>
+Navaigation Bar 
+    <nav> 
+        <ul>
+            <li> </li>
+        </ul>
+    </nav>
+Header
+    <header> </header>
+Main 
+    <main>
+        <aside> </aside>
+        <section> </section>
+        <article> </article>
+    </main>
+Footer 
+    <footer> </footer>
+
+
+Lists
+Unordered List
+    <ul>
+        <li></li>
+        <ul>
+            <li></li>
+        </ul>
+    </ul>
+Ordered List
+    <ol>
+        <li></li>
+        <ol>
+            <li></li>
+        </ol>
+    </ol>
+Description List
+    <dl>
+        <dt></dt>
+        <dd></dd>
+    </dl>
+
+
+ Tables
+    <table>
+        <tr>
+            <th></th>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+
+Buttons
+    <button style="font-size:25px; background-color: grey; color:lightblue; border-radius:5px"></button>
+Hyperlinking Button 
+    <a href="">
+        <button style="font-size:25px; background-color: grey; color:lightblue; border-radius:5px"></button>
+    </a>
+Scripting
+<button onclick="doSomething" style="font-size:25px; background-color: grey; color:lightblue; border-radius:5px"></button>
+    <script>
+        function doSomething(){
+            
+        }
+    </script>
+
+Forms
+    <form action="index.php" method="GET/POST" enctype="multipart/form-data">
+        <label for="text"></label>
+        <input type="text" id="text" placeholder="" minlength="" maxlength="" required>
+
+        <label for="password"></label>
+        <input type="password" id="password" placeholder="" minlength="" maxlength="" required>
+
+        <label for="email"></label>
+        <input type="email" id="email" placeholder="" minlength="" maxlength="" required>
+
+        <label for="phone"></label>
+        <input type="tel" id="phone" placeholder="" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" minlength="" maxlength="" required>
+
+        <label for="day"></label>
+        <input type="date" id="day" placeholder="" minlength="" maxlength="" required>
+        
+        <label for="#"></label>
+        <input type="number" id="#" placeholder="" min="" max="" value="1" required>
+
+        <label for="Radio"></label>
+            <label for=""></label>
+            <input type="radio" id="" value="" name="Radio">
+            <label for=""></label>
+            <input type="radio" id="" value="" name="Radio">
+            <label for=""></label>
+            <input type="radio" id="" value="" name="Radio">
+
+        <label for="Dropdown"></label>
+        <select id="Dropdown">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>
+
+        <label for="Checkbox"></label>
+        <input type="checkbox" id="Checkbox">
+
+        <label for="Comment"></label>
+        <textarea id="Comment" rows="" cols=""> </textarea>
+
+        <label for="File"></label>
+        <input type="file" id="File" accept="">
+
+        <input type="reset">
+        <input type="submit">
+    </form>
+
+Hyperlinks
+Anchor Tags
+    <a> Text </a> 
+        hyperlinks items with description "Text"
+    Websites
+    <a href="https://website.com/" target="_blank" title=""> </a>
+        href is the link to be opened to
+        target allows to open on same page or different page
+        title a description that pops up when link is hovered
+    Files
+    <a href="filepath.html" target="_blank" title=""> </a>
+        href is the file to be opened to
+    Emails
+    <a href="mailto:test@fake.com" target="_blank" title=""> </a>
+        href begins process to send email
+
+
+Images
+    <img src="" alt="text" height="" width="">
+        src is image that is displayed
+        works for png, jpg, gif, etc
+        alt is text displayed if image doesn't show
+    <a href="" target="_blank" title=""> 
+        <img src="" alt="text" height="" width="">
+    </a>
+        Turns image into a hyperlink
+
+
+Audio
+    <audio> 
+        <source src="">
+    </audio>
+    <audio controls autoplay muted loop> 
+        <source src="song.mp3" type="audio/mpeg">
+        <source src="song.wav" type="audio/wav">
+    </audio>
+        blue tags are not necessary
+
+
+Video <!-- .mp4 .webm .ogg-->
+    <video src="" height="" width=""> </video>
+    <video src="" height="" width="" controls autoplay muted loop> </video>
+    <video height="" width="" controls autoplay muted loop> 
+            <source src="video.mp4" type="video/mp4">
+            <source src="video.webm" type="video/webm">
+    </video>
+        blue tags are not necessary
+    <a href="" target="_blank" title=""> 
+        <video height="" width="" controls autoplay muted loop> 
+            <source src="video.mp4" type="video/mp4">
+            <source src="video.webm" type="video/webm">
+        </video>
+    </a>
+        Turns image into a hyperlink
+
+
+Formatting Text 
+    Bold <b> </b>
+    Italic <i> </i>
+    Underline <u> </u>
+    Deleted <del> </del>
+    Big <big> </big>
+    Small <small> </small>
+    Subscript <sub> </sub>
+    Superscript <sup> </sup>
+    Monospaced <tt> </tt>
+    Mark <mark> </mark>
+        (CSS) Mark <mark style ="background-color:lightgreen"> </mark>
+
+HTML Texts
+    Copyright Symbol: &copy

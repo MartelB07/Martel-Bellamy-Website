@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    /* Colors */
+    --white-color: #ffffff;
+    --primary-color: #000000;
+    --secondary-color: #c3c3c3;
+    --header-bg: #f6f1e8;
+    --nav-bg: #000000;
+    --text-dark: #2b2b2b;
+    --text-light: #fff;
+
+    /* Font Sizes */
+    --font-size-s: .95rem;
+    --font-size-m: 1.12rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.5rem;
+
+    /* Border Radius */
+    --border-radius-s: 8px;
+    --border-radius-m: 20px;
+
+
+    --site-max-width: 1300px;
+}
+
+
+/* Website Styles */
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+body {
+    background: #becda4;
+}
+
+.section-content {
+    width: min(100%, var(--site-max-width));
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1999;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    padding-top: 50px;
+}
+
+.header-content,
+.brand-group,
+.brand {
+    position: relative;
+    z-index: 9999;
+}
+
+
+
+/*
+NAV BAR AND BRAND
+*/
+.brand-group {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+}
+
+/* Logo Styles */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 16px;
+    background: var(--primary-color);
+    border-radius: var(--border-radius-m);
+    color: var(--text-light);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 50px;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.brand:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.brand-mark {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.brand-mark img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.logo-text {
+    padding-left: 20px;
+    font-size: var(--font-size-xxl);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-light);
+    white-space: nowrap;
+    flex: 1;
+}
+
+/* Navigation Menu */
+.navbar {
+    position: absolute;
+    top: calc(100% - 16px);
+    left: 0%;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 0;
+
+    background: var(--nav-bg);
+    padding: 22px 12px 12px;
+    border-radius: 0 0 var(--border-radius-m) var(--border-radius-m);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
+}
+
+/* Nav Bar */
+.brand-group:hover .nav-menu,
+.brand-group:focus-within .nav-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+.nav-menu::before {
+    display: none;
+    visibility: hidden;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px 16px;
+    color: var(--white-color);
+    font-size: var(--font-size-l);
+    border-radius: 999px;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    transform: translateY(-1px);
+}
+
+/* Page Styling */
+main {
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    margin-bottom:30px;
+    color: var(--text-dark);
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    width: min(100%, var(--site-max-width));
+    text-align: center;
+}
+
+.pdiv {
+    width: min(100%, var(--site-max-width));
+    margin: 0 auto;
+    column-count: 3;
+    column-gap: 24px;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.arts {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 24px;
+    background: #f8f8f8;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    break-inside: avoid;
+    page-break-inside: avoid;
+    transition: filter 0.3s ease;
+}
+
+.arts:hover {
+    filter: brightness(70%);
+}
+
+.arts h3 {
+    margin: 0 0 12px;
+    color: white;
+    font-size: 1.5rem;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.photography {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.artwork {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+/*Light Box */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-image {
+    max-width: 80vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    background: white;
+}
+
+.lightbox-image[alt="Upper Lower"] {
+    transform: scale(2);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 2.5rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.lightbox-prev {
+    left: 40px;
+}
+
+.lightbox-next {
+    right: 40px;
+}
+
+.lightbox-close:hover,
+.lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.28);
+}

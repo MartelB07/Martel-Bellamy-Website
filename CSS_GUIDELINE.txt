@@ -1,0 +1,206 @@
+Inline:
+    Body Styles
+        <body> </body>
+            style=""
+                background-color:
+
+    Header Styles
+        <h1> </h1>
+            style=""
+                color:
+
+    Paragraph Styles
+        <p> </p>
+            style: ""
+                color:
+
+Internal
+    <style> 
+        body{
+
+        }
+        h1{
+
+        }
+        p{
+
+        }
+    </style>
+
+
+
+
+
+External (# selects item by id) (. selects based from class) (* means all elements)
+    *{
+
+    }
+
+    #p1{
+
+    }
+    #p2{
+
+    }
+    #p3{
+
+    }
+
+    .class{
+
+    }
+
+
+Ways to color
+    color: (color name)
+    color: rgb(0,0,0)
+    color: #000000
+    color: hsl(0,0,0)
+
+Font
+    Importing Fonts (At Top of stylesheet)
+        @font-face{
+            src: url()
+            font-family: name;
+        }
+    Font Styling
+        font-family: (font1), (font2);
+        font-size: #px;
+        font-size: #em;
+        font-weight: type;
+        font-style: type;
+
+Borders
+    border-style: (solid, dashed, dotted, double, groove, ridge, inset, outset, none);
+    border-width: #px;
+    border-color: (color name, rgb(0,0,0), #000000, hsl(0,0,0))
+    border: #px (style) (color)
+
+    border-radius: #px
+    border-bottom:#px
+    border-top: #px
+    border-left: #px
+    border-right: #px
+
+Shadows
+    text-shadow: #px (horizontal) #px (vertical) #px (blur) (color);
+    box-shadow: #px (horizontal) #px (vertical) #px (blur) (color)
+
+Margins
+    margin: #px (or (auto) for center)
+    margin-bottom: #px
+    margin-top: #px
+    margin-left: #px
+    margin-right: #px
+
+Padding
+    padding: #px (or (auto) for center)
+
+Float
+    float: (left, right)
+For containers (so that things do not flow outside boundaries)
+    display: flow-root
+
+Overflow
+    overflow: (visible, hidden, clip, scroll, auto)
+    overflow-clip-margin: #px
+
+Display
+    display: (block, inline, inline-block, none)
+    visibility: (hidden)
+
+Containers <div> or <span>
+    height: #px (or #%, or, vh (viewport height), or auto)
+    min-height: #%
+    max-height: #%
+    width: #px (or #%, or auto)
+    box-sizing: (border-box)
+
+Text
+    text-align: (center)
+    text-decoration: (none)
+
+Position
+    position: (relative, fixed, absolute, sticky, static (default))
+When using relative
+    top: #px
+    left: #px
+When using fixed
+    right: #px
+    bottom: #px
+When using absolute (container inside a container)
+    top: #px
+    left: #px
+
+Transform
+    transform: translateX(px) rotateZ(#deg) scale(#)
+
+Background Images
+    background-image: url()
+    background-repeat: (no-repeat)
+    background-position: (center)
+    background-attachment: (fixed)
+    background-size: (cover)
+
+Combinators
+      = descendant
+    > = child
+    ~ = general sibling
+    + = adjacent sibling
+
+Psuedo-classes
+    :hover{
+
+    }
+    :active{
+
+    }
+    :link{
+
+    }
+    :visited{
+
+    }
+    :not:(:     ){
+
+    }
+    :nth-child(Formula){
+
+    }
+
+Psuedo-elements
+    ::first-letter{
+
+    }
+    ::first-line{
+
+    }
+    ::selection{
+
+    }
+    ::before{
+        content: ""
+    }
+    ::after{
+        content: ""
+    }
+    ::marker {
+        content: ""
+    }
+
+Media
+    @media screen and (max-width:#px){
+
+    }
+
+Animations
+    @keyframes name{
+
+    }
+    item to put into external CSS
+        animation-name: name
+        animation-duration: #s
+        animation-iteration-count: # or (infinite)
+        animation-direction: (normal, reverse, alternate, alternate-reverse)
+        animation-play-state: (pause, running)
+        animation-timing-function: (ease-in-out, linear, steps(#))
