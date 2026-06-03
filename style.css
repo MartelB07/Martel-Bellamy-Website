@@ -87,7 +87,6 @@ body {
 }
 
 
-
 /*
 NAV BAR AND BRAND
 */
@@ -159,6 +158,7 @@ NAV BAR AND BRAND
     left: 0%;
     width: 100%;
     z-index: 1;
+    pointer-events: none;
 }
 
 .nav-menu {
@@ -180,21 +180,15 @@ NAV BAR AND BRAND
     transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
 }
 
-/* Nav Bar — only reveal when hovering the brand pill (brand-group height = brand pill only) */
-.brand-group:hover .nav-menu,
-.brand-group:focus-within .nav-menu {
+.nav-menu.open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
     transform: translateY(0);
-    transition-delay: 0s;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0s;
 }
 
-.nav-menu::before {
-    display: none;
-    visibility: hidden;
-}
-
+/* Nav Bar — only reveal when hovering the brand pill (brand-group height = brand pill only) */
 .nav-link {
     display: block;
     padding: 10px 16px;
@@ -437,6 +431,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 8px;
+    z-index: 2;
 }
 
 .about-pill {
