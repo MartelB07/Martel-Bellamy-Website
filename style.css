@@ -42,6 +42,8 @@ a {
 
 img {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 body {
@@ -95,7 +97,7 @@ NAV BAR AND BRAND
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    width: 500px;
+    width: min(100%, 500px);
     height: fit-content; /* hover zone = brand pill only, not the dropdown below */
 }
 
@@ -143,12 +145,13 @@ NAV BAR AND BRAND
 
 .logo-text {
     padding-left: 20px;
-    font-size: var(--font-size-xxl);
+    font-size: clamp(1.1rem, 4vw, 2.5rem);
     font-weight: 700;
     letter-spacing: 0.5px;
     color: var(--text-light);
-    white-space: nowrap;
+    white-space: normal;
     flex: 1;
+    line-height: 1.1;
 }
 
 /* Navigation Menu */
@@ -193,7 +196,7 @@ NAV BAR AND BRAND
     display: block;
     padding: 10px 16px;
     color: var(--white-color);
-    font-size: var(--font-size-l);
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
     border-radius: 999px;
     justify-content: center;
     align-items: center;
@@ -444,6 +447,7 @@ h1 {
     font-size: var(--font-size-m);
     font-weight: 600;
     transition: transform 0.2s ease, background 0.2s ease;
+    text-align: center;
 }
 
 .about-pill:hover {
@@ -470,35 +474,6 @@ h1 {
 
 
 /* ===== Mobile / tablet responsive fixes ===== */
-
-/* Base tweaks for all screens */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.brand-group {
-    width: min(100%, 500px);
-}
-
-.brand {
-    width: 100%;
-}
-
-.logo-text {
-    font-size: clamp(1.1rem, 4vw, 2.5rem);
-    white-space: normal;
-    line-height: 1.1;
-    padding-left: 12px;
-}
-
-.nav-link {
-    font-size: clamp(1rem, 3.5vw, 1.5rem);
-}
-
-.about-pill {
-    text-align: center;
-}
 
 /* Tablet */
 @media (max-width: 900px) {
