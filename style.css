@@ -227,6 +227,7 @@ h1 {
 }
 
 .pdiv {
+    column-count: 3;
     width: min(100%, var(--site-max-width));
     margin: 0 auto;
     column-count: 3;
@@ -463,6 +464,173 @@ h1 {
     }
 
     .about-bio {
+        text-align: left;
+    }
+}
+
+
+/* ===== Mobile / tablet responsive fixes ===== */
+
+/* Base tweaks for all screens */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.brand-group {
+    width: min(100%, 500px);
+}
+
+.brand {
+    width: 100%;
+}
+
+.logo-text {
+    font-size: clamp(1.1rem, 4vw, 2.5rem);
+    white-space: normal;
+    line-height: 1.1;
+    padding-left: 12px;
+}
+
+.nav-link {
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+}
+
+.about-pill {
+    text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .pdiv {
+        column-count: 2;
+        column-gap: 18px;
+        padding: 0 16px;
+    }
+
+    .about-card {
+        padding: 28px;
+        gap: 24px;
+    }
+}
+
+/* Phone */
+@media (max-width: 640px) {
+    .section-content {
+        padding: 0 12px;
+    }
+
+    .header-content {
+        padding: 10px 12px;
+    }
+
+    .site-header {
+        z-index: 999;
+    }
+
+    .brand-group {
+        width: 100%;
+    }
+
+    .brand {
+        padding: 10px 12px;
+        padding-left: 14px;
+        gap: 10px;
+    }
+
+    .brand-mark {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-mark img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .logo-text {
+        font-size: 1.05rem;
+        padding-left: 0;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    .nav-menu {
+        width: 100%;
+        padding: 16px 10px 10px;
+        gap: 6px;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 12px 14px;
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 24px 12px 32px;
+    }
+
+    h1 {
+        padding: 14px;
+        font-size: 1.3rem;
+        margin-bottom: 18px;
+    }
+
+    .pdiv {
+        column-count: 1;
+        padding: 0 12px;
+        column-gap: 0;
+    }
+
+    .arts {
+        margin-bottom: 18px;
+        padding: 12px;
+    }
+
+    .arts h3 {
+        font-size: 1.05rem;
+        padding: 7px 10px;
+    }
+
+    .about-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        margin-top: 18px;
+    }
+
+    .about-pill {
+        width: 100%;
+        padding: 14px 18px;
+    }
+
+    .about-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 22px 16px;
+        gap: 18px;
+    }
+
+    .about-photo-wrap {
+        width: 160px;
+        height: 160px;
+    }
+
+    .about-name {
+        font-size: 1.8rem;
+    }
+
+    .about-facts li {
+        justify-content: center;
+        font-size: 1rem;
+    }
+
+    .about-bio {
+        font-size: 1rem;
         text-align: left;
     }
 }
