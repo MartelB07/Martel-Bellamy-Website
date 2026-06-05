@@ -232,22 +232,22 @@
 
 
     const randomTracks = [
-        { title: "Wish Me Luck", src: "music/audio/singles/wish-me-luck.wav", description: "" },
-        { title: "All I Have Is Me", src: "music/audio/singles/all-I-have-is-me.wav", description: "" },
-        { title: "Atlas", src: "music/audio/singles/atlas.wav", description: "" },
-        { title: "Beautiful", src: "music/audio/singles/beautiful.wav", description: "" },
-        { title: "Golden Gaurdian", src: "music/audio/singles/golden-gaurdian.wav", description: "" },
-        { title: "Luminance", src: "music/audio/singles/luminance.wav", description: "" },
-        { title: "Legion", src: "music/audio/singles/legion.wav", description: "" },
-        { title: "Little Bit Of Spice", src: "music/audio/singles/little-bit-of-spice.wav", description: "" },
+        { title: "Wish Me Luck", src: "music/audio/singles/wish-me-luck.mp3", description: "" },
+        { title: "All I Have Is Me", src: "music/audio/singles/all-I-have-is-me.mp3", description: "" },
+        { title: "Atlas", src: "music/audio/singles/atlas.mp3", description: "" },
+        { title: "Beautiful", src: "music/audio/singles/beautiful.mp3", description: "" },
+        { title: "Golden Gaurdian", src: "music/audio/singles/golden-gaurdian.mp3", description: "" },
+        { title: "Luminance", src: "music/audio/singles/luminance.mp3", description: "" },
+        { title: "Legion", src: "music/audio/singles/legion.mp3", description: "" },
+        { title: "Little Bit Of Spice", src: "music/audio/singles/little-bit-of-spice.mp3", description: "" },
         { title: "Low-High Low-Fi", src: "music/audio/singles/low-high-low-fi.wav", description: "" },
-        { title: "Melodic", src: "music/audio/singles/melodic.wav", description: "" },
-        { title: "Phonk Mix", src: "music/audio/singles/phonk-mix.wav", description: "" },
-        { title: "Rising", src: "music/audio/singles/rising.wav", description: "" },
-        { title: "Together", src: "music/audio/singles/together.wav", description: "" },
-        { title: "Wish me Luck", src: "music/audio/singles/wish-me-luck.wav", description: "" },
-        { title: "Dimensions", src: "music/audio/singles/dimensions.wav", description: "" },
-        { title: "Maybe Another Time", src: "music/audio/singles/maybe-another-time.wav", description: "" }
+        { title: "Melodic", src: "music/audio/singles/melodic.mp3", description: "" },
+        { title: "Phonk Mix", src: "music/audio/singles/phonk-mix.mp3", description: "" },
+        { title: "Rising", src: "music/audio/singles/rising.mp3", description: "" },
+        { title: "Together", src: "music/audio/singles/together.mp3", description: "" },
+        { title: "Wish me Luck", src: "music/audio/singles/wish-me-luck.mp3", description: "" },
+        { title: "Dimensions", src: "music/audio/singles/dimensions.mp3", description: "" },
+        { title: "Maybe Another Time", src: "music/audio/singles/maybe-another-time.mp3", description: "" }
     ];
 
     const randomAudioPlayer = document.getElementById("randomAudioPlayer");
