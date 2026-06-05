@@ -233,7 +233,7 @@
 
     const randomTracks = [
         { title: "Wish Me Luck", src: "music/audio/singles/wish-me-luck.mp3", description: "" },
-        { title: "All I Have Is Me", src: "music/audio/singles/all-I-have-is-me.mp3", description: "" },
+        { title: "All I Have Is Me", src: "music/audio/singles/all-i-have-is-me.mp3", description: "" },
         { title: "Atlas", src: "music/audio/singles/atlas.mp3", description: "" },
         { title: "Beautiful", src: "music/audio/singles/beautiful.mp3", description: "" },
         { title: "Golden Gaurdian", src: "music/audio/singles/golden-gaurdian.mp3", description: "" },
