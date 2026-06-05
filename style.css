@@ -2382,3 +2382,51 @@ html[data-theme="light"] .audio-progress {
     .film-preview-grid { grid-template-columns: 1fr; }
     .curated-heading.with-view-more { align-items: start; }
 }
+
+
+/* ===== Mobile fix: keep Music Library singles visible and reachable ===== */
+#singles {
+    scroll-margin-top: 110px;
+}
+
+@media (max-width: 700px) {
+    .music-page .archive-main .archive-hero {
+        min-height: auto;
+        padding-top: 118px;
+        padding-bottom: 36px;
+    }
+
+    .music-page .archive-main .music-hero-copy {
+        width: 100%;
+    }
+
+    .music-page .archive-main .music-hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .music-page .archive-main #singles {
+        display: block;
+        opacity: 1;
+        transform: none;
+        visibility: visible;
+        padding-top: 36px;
+    }
+
+    .music-page .archive-main #singles .music-section-heading {
+        margin-bottom: 22px;
+    }
+
+    .music-page .archive-main #singles .archive-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        overflow: visible;
+    }
+
+    .music-page .archive-main #singles .track-card {
+        width: 100%;
+        min-width: 0;
+    }
+}
