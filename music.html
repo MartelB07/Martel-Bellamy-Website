@@ -3,45 +3,575 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martel Bellamy</title>
+    <title>Martel Bellamy | Music</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<body>
+<body class="music-page">
 
     <header class="site-header">
         <div class="section-content header-content">
             <div class="brand-group">
-                <button type="button" class="brand" aria-expanded="false">
-                    <div class="brand-mark">
-                        <img src="/images/Initials.png" alt="Logo">
-                    </div>
-                    <h2 class="logo-text">Martel Bellamy</h2>
+                <button type="button" class="brand" aria-expanded="false" aria-label="Open site navigation">
+                    <div class="brand-mark"><img src="images/Initials.png" alt="Martel Bellamy logo"></div>
+                    <span class="brand-copy"><span class="logo-text">Martel Bellamy</span><span class="brand-subtext">Music Wing</span></span>
+                    <span class="brand-chevron" aria-hidden="true">▾</span>
                 </button>
-
-                <nav class="navbar">
+                <nav class="navbar" aria-label="Primary navigation">
                     <ul class="nav-menu">
                         <li><a href="index.html" class="nav-link">Home</a></li>
-                        <li><a href="art.html" class="nav-link">Art</a></li>
-                        <li><a href="music.html" class="nav-link">Music</a></li>
+                        <li class="nav-family"><a href="art.html" class="nav-link">Art</a><div class="nav-supplements"><a href="visual-library.html">Visual Library</a><a href="film-library.html">Films</a></div></li>
+                        <li class="nav-family"><a href="music.html" class="nav-link">Music</a><div class="nav-supplements"><a href="music-library.html">Library</a><a href="music-videos.html">Videos</a></div></li>
                         <li><a href="stem.html" class="nav-link">Projects</a></li>
                     </ul>
                 </nav>
             </div>
+            <div class="header-actions"><button type="button" id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">🌙</span><span class="theme-toggle-text">Dark</span></button></div>
         </div>
     </header>
 
-    <main>
-        <h1>Music - Work In Progress</h1>
-        <div class="about-links">
-            <a href="index.html" class="about-pill">🏠 Home</a>
-            <a href="art.html" class="about-pill">🖼️ Art & Photography</a>
-            <a href="stem.html" class="about-pill">💻 Projects</a>
-        </div>
+    <main class="music-main">
+        <section class="music-hero" aria-label="Music page introduction">
+            <div class="music-stage-glow" aria-hidden="true"></div>
+            <div class="section-content music-hero-grid reveal-on-scroll">
+                <div class="music-hero-copy">
+                    <p class="music-kicker">Music Wing</p>
+                    <h1>Sound built across genres.</h1>
+                    <p>A place for listening to all the tracks I make in my free time spanning multiple genres including pop, retro, cinematic, etc.</p>
+                    <div class="music-hero-actions"><a href="#listening-room" class="music-primary-button">Enter Listening Room</a><a href="music-library.html" class="music-secondary-button">Music Library</a></div>
+                </div>
+                <div class="stage-card" aria-label="Random music player">
+                    <div class="record-orbit" aria-hidden="true"><span></span></div>
+                    <div class="visualizer-bars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                    <div class="stage-card-copy random-player" data-random-player>
+                        <span>Now Playing</span><strong id="randomTrackTitle">Original Sounds</strong><p id="randomTrackDescription">Press play to hear a random placeholder song from music/audio.</p>
+                        <audio id="randomAudioPlayer" preload="metadata"><source src="music/audio/test.wav" type="audio/wav"></audio>
+                        <div class="random-player-actions"><button type="button" class="music-primary-button" id="randomPlayPause">Play Random</button><button type="button" class="music-secondary-button" id="randomNextTrack">New Random</button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="music-section section-content reveal-on-scroll" id="listening-room">
+            <div class="music-section-heading with-view-more">
+                <div>
+                    <p class="music-kicker">Listening Room</p>
+                    <h2>Explore My Releases</h2>
+                    <p class="music-heading-note">Enjoy music by me</p>
+                </div>
+                <a href="music-library.html" class="music-secondary-button view-more-button">View More Music</a>
+            </div>
+
+            <!-- <div class="music-filter" aria-label="Filter music cards">
+                <button type="button" class="active" data-music-filter="all">All</button>
+                <button type="button" data-music-filter="beats">Beats</button>
+                <button type="button" data-music-filter="experimental">Experimental</button>
+                <button type="button" data-music-filter="cinematic">Cinematic</button>
+            </div>
+            
+            <div class="track-grid media-scroll track-scroll">
+                <article class="track-card filter-track featured-track" data-genre="beats experimental cinematic">
+                    <div class="track-art has-cover playable-cover"><img src="music/covers/cover.jpg" alt="Featured Track Test cover art"><button type="button" class="cover-play-button" data-audio-toggle aria-label="Play or pause Featured Track Test">▶</button></div>
+                    <div class="track-info"><p>Featured Track</p><h3>Featured Track Test</h3><span>Main spotlight track for the music page.</span></div>
+                    <div class="custom-audio-control" data-audio-control>
+                        <button type="button" class="inline-play-button" data-audio-toggle>Play</button>
+                        <div class="audio-progress-area">
+                            <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Featured Track Test">
+                            <div class="audio-time"><span class="current-time">0:00</span><span class="duration">0:00</span></div>
+                        </div>
+                        <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/test.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                    </div>
+                </article>
+
+                <article class="track-card filter-track " data-genre="beats">
+                    <div class="track-art has-cover playable-cover"><img src="music/covers/cover.jpg" alt="Instrumental Test cover art"><button type="button" class="cover-play-button" data-audio-toggle aria-label="Play or pause Instrumental Test">▶</button></div>
+                    <div class="track-info"><p>Beat / Instrumental</p><h3>Instrumental Test</h3><span>Placeholder for a beat, instrumental, or production idea.</span></div>
+                    <div class="custom-audio-control" data-audio-control>
+                        <button type="button" class="inline-play-button" data-audio-toggle>Play</button>
+                        <div class="audio-progress-area">
+                            <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Instrumental Test">
+                            <div class="audio-time"><span class="current-time">0:00</span><span class="duration">0:00</span></div>
+                        </div>
+                        <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/test.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                    </div>
+                </article>
+
+                <article class="track-card filter-track " data-genre="beats">
+                    <div class="track-art has-cover playable-cover"><img src="music/covers/cover.jpg" alt="Beat Test 02 cover art"><button type="button" class="cover-play-button" data-audio-toggle aria-label="Play or pause Beat Test 02">▶</button></div>
+                    <div class="track-info"><p>Beat Sketch</p><h3>Beat Test 02</h3><span>Another beat card for future production work.</span></div>
+                    <div class="custom-audio-control" data-audio-control>
+                        <button type="button" class="inline-play-button" data-audio-toggle>Play</button>
+                        <div class="audio-progress-area">
+                            <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Beat Test 02">
+                            <div class="audio-time"><span class="current-time">0:00</span><span class="duration">0:00</span></div>
+                        </div>
+                        <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/test.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                    </div>
+                </article>
+
+                <article class="track-card filter-track " data-genre="experimental cinematic">
+                    <div class="track-art has-cover playable-cover"><img src="music/covers/cover.jpg" alt="Experimental Test cover art"><button type="button" class="cover-play-button" data-audio-toggle aria-label="Play or pause Experimental Test">▶</button></div>
+                    <div class="track-info"><p>Experimental Sound</p><h3>Experimental Test</h3><span>Placeholder for unusual textures, genre blends, and sound experiments.</span></div>
+                    <div class="custom-audio-control" data-audio-control>
+                        <button type="button" class="inline-play-button" data-audio-toggle>Play</button>
+                        <div class="audio-progress-area">
+                            <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Experimental Test">
+                            <div class="audio-time"><span class="current-time">0:00</span><span class="duration">0:00</span></div>
+                        </div>
+                        <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/test.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                    </div>
+                </article>
+
+                <article class="track-card filter-track " data-genre="experimental">
+                    <div class="track-art has-cover playable-cover"><img src="music/covers/cover.jpg" alt="Experimental Test 02 cover art"><button type="button" class="cover-play-button" data-audio-toggle aria-label="Play or pause Experimental Test 02">▶</button></div>
+                    <div class="track-info"><p>Experimental Sketch</p><h3>Experimental Test 02</h3><span>A second experimental slot for genre-bending ideas.</span></div>
+                    <div class="custom-audio-control" data-audio-control>
+                        <button type="button" class="inline-play-button" data-audio-toggle>Play</button>
+                        <div class="audio-progress-area">
+                            <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Experimental Test 02">
+                            <div class="audio-time"><span class="current-time">0:00</span><span class="duration">0:00</span></div>
+                        </div>
+                        <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/test.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                    </div>
+                </article>
+
+                <article class="track-card filter-track " data-genre="cinematic">
+                    <div class="track-art has-cover playable-cover"><img src="music/covers/cover.jpg" alt="Cinematic Test 01 cover art"><button type="button" class="cover-play-button" data-audio-toggle aria-label="Play or pause Cinematic Test 01">▶</button></div>
+                    <div class="track-info"><p>Cinematic Sketch</p><h3>Cinematic Test 01</h3><span>A soundtrack-style placeholder for film or atmospheric ideas.</span></div>
+                    <div class="custom-audio-control" data-audio-control>
+                        <button type="button" class="inline-play-button" data-audio-toggle>Play</button>
+                        <div class="audio-progress-area">
+                            <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Cinematic Test 01">
+                            <div class="audio-time"><span class="current-time">0:00</span><span class="duration">0:00</span></div>
+                        </div>
+                        <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/test.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                    </div>
+                </article>
+
+                <article class="track-card filter-track " data-genre="beats experimental">
+                    <div class="track-art has-cover playable-cover"><img src="music/covers/cover.jpg" alt="Hybrid Test 01 cover art"><button type="button" class="cover-play-button" data-audio-toggle aria-label="Play or pause Hybrid Test 01">▶</button></div>
+                    <div class="track-info"><p>Hybrid Track</p><h3>Hybrid Test 01</h3><span>A mixed-style placeholder that can fit multiple audiences.</span></div>
+                    <div class="custom-audio-control" data-audio-control>
+                        <button type="button" class="inline-play-button" data-audio-toggle>Play</button>
+                        <div class="audio-progress-area">
+                            <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Hybrid Test 01">
+                            <div class="audio-time"><span class="current-time">0:00</span><span class="duration">0:00</span></div>
+                        </div>
+                        <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/test.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                    </div>
+                </article>
+
+                <article class="track-card filter-track " data-genre="beats cinematic">
+                    <div class="track-art has-cover playable-cover"><img src="music/covers/cover.jpg" alt="Cinematic Beat Test cover art"><button type="button" class="cover-play-button" data-audio-toggle aria-label="Play or pause Cinematic Beat Test">▶</button></div>
+                    <div class="track-info"><p>Cinematic Beat</p><h3>Cinematic Beat Test</h3><span>A beat with cinematic energy and future visual potential.</span></div>
+                    <div class="custom-audio-control" data-audio-control>
+                        <button type="button" class="inline-play-button" data-audio-toggle>Play</button>
+                        <div class="audio-progress-area">
+                            <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Cinematic Beat Test">
+                            <div class="audio-time"><span class="current-time">0:00</span><span class="duration">0:00</span></div>
+                        </div>
+                        <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/test.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                    </div>
+                </article>
+            </div> -->
+        </section>
+
+        <section class="music-section section-content reveal-on-scroll" id="singles">
+            <div class="music-section-heading split-heading with-view-more">
+                <div>
+                    <p class="music-kicker">Singles</p>
+                    <h2>Standalone ideas.</h2>
+                </div>
+                <div class="section-actions">
+                    <p class="music-heading-note">Explore my demos, one-off releases, and works in progress.</p>
+                    <a href="music-library.html#singles" class="music-secondary-button view-more-button">View More Singles</a>
+                </div>
+            </div>
+
+            <div class="track-grid media-scroll singles-layout">
+                <article class="track-card filter-track " data-genre="beats cinematic">
+                    <div class="track-art has-cover playable-cover">
+                        <img src="music/covers/cover.jpg" alt="Phonk Mix cover art">
+                        <button type="button" class="cover-play-button" data-audio-toggle aria-label="Play or pause Phonk Mix">▶</button>
+                    </div>
+                    <div class="track-info">
+                        <p>Single</p>
+                        <h3>Phonk Mix</h3>
+                        <span>Created: May 24, 2026</span>
+                    </div>
+                    <div class="custom-audio-control" data-audio-control>
+                        <button type="button" class="inline-play-button" data-audio-toggle>Play</button>
+                        <div class="audio-progress-area">
+                            <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Phonk Mix">
+                            <div class="audio-time">
+                                <span class="current-time">0:00</span>
+                                <span class="duration">0:00</span>
+                            </div>
+                        </div>
+                        <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/singles/phonk-mix.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                    </div>
+                </article>
+
+                <article class="track-card filter-track " data-genre="beats cinematic">
+                    <div class="track-art has-cover playable-cover">
+                        <img src="music/covers/cover.jpg" alt="All I Have Is Me cover art">
+                        <button type="button" class="cover-play-button" data-audio-toggle aria-label="Play or pause All I Have Is Me">▶</button>
+                    </div>
+                    <div class="track-info">
+                        <p>Single</p>
+                        <h3>All I Have Is Me</h3>
+                        <span>Created: June 29, 2024</span>
+                    </div>
+                    <div class="custom-audio-control" data-audio-control>
+                        <button type="button" class="inline-play-button" data-audio-toggle>Play</button>
+                        <div class="audio-progress-area">
+                            <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for All I Have Is Me">
+                            <div class="audio-time">
+                                <span class="current-time">0:00</span>
+                                <span class="duration">0:00</span>
+                            </div>
+                        </div>
+                        <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/singles/all-I-have-is-me.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                    </div>
+                </article>
+
+                <article class="track-card filter-track " data-genre="beats cinematic">
+                    <div class="track-art has-cover playable-cover">
+                        <img src="music/covers/cover.jpg" alt="Beautiful cover art">
+                        <button type="button" class="cover-play-button" data-audio-toggle aria-label="Play or pause Beautiful">▶</button>
+                    </div>
+                    <div class="track-info">
+                        <p>Single</p>
+                        <h3>Beautiful</h3>
+                        <span>Created: May 07, 2024</span>
+                    </div>
+                    <div class="custom-audio-control" data-audio-control>
+                        <button type="button" class="inline-play-button" data-audio-toggle>Play</button>
+                        <div class="audio-progress-area">
+                            <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Beautiful">
+                            <div class="audio-time">
+                                <span class="current-time">0:00</span>
+                                <span class="duration">0:00</span>
+                            </div>
+                        </div>
+                        <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/singles/beautiful.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                    </div>
+                </article>
+
+                
+            </div>
+        </section>
+
+        <section class="music-section section-content reveal-on-scroll" id="albums">
+            <div class="music-section-heading split-heading with-view-more">
+                <div>
+                    <p class="music-kicker">Albums</p>
+                    <h2>Collections & projects.</h2></div>
+                    <div class="section-actions">
+                        <p class="music-heading-note">Explore album cards with dropdowns for playing songs or exploring full projects.</p>
+                        <a href="music-library.html#albums" class="music-secondary-button view-more-button">View More Albums</a>
+                    </div>
+                </div>
+            <div class="album-scroll media-scroll">
+                <article class="album-stage-card media-album-card">
+                    <div class="album-art-panel"><img src="music/covers/albums/echoes.jpg" alt="Echoes Album cover art"></div>
+                    <div class="album-details-panel">
+                        <p class="music-kicker">Album / EP 01</p>
+                        <h3>Echoes Album</h3>
+                        <p>Album full of a of sounds sinpired by my younger siblings.</p>
+                        <details class="album-dropdown">
+                            <summary>Play songs in this album</summary>
+                            <div class="album-track-list">
+                                <div class="album-track" data-audio-control>
+                                    <span>01</span>
+                                    <strong>Supernatural</strong>
+                                    <button type="button" class="album-play-button" data-audio-toggle aria-label="Play or pause Supernatural">▶</button>
+                                    <div class="album-progress-area">
+                                        <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Supernatural">
+                                        <div class="audio-time">
+                                            <span class="current-time">0:00</span>
+                                            <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
+                                    <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/albums/echoes/supernatural.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                                </div>
+
+                                <div class="album-track" data-audio-control>
+                                    <span>02</span>
+                                    <strong>Eagles Journey</strong>
+                                    <button type="button" class="album-play-button" data-audio-toggle aria-label="Play or pause Test Eagles Journey">▶</button>
+                                    <div class="album-progress-area"><input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Test Eagles Journey">
+                                        <div class="audio-time">
+                                            <span class="current-time">0:00</span>
+                                            <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
+                                    <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/albums/echoes/eagles-journey.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                                </div>
+
+                                <div class="album-track" data-audio-control>
+                                    <span>03</span>
+                                    <strong>The Way We Rock</strong>
+                                    <button type="button" class="album-play-button" data-audio-toggle aria-label="Play or pause Test The Way We Rock">▶</button>
+                                    <div class="album-progress-area">
+                                        <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for The Way We Rock">
+                                        <div class="audio-time">
+                                            <span class="current-time">0:00</span>
+                                            <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
+                                    <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/albums/echoes/the-way-we-rock.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                                </div>
+
+                                <div class="album-track" data-audio-control>
+                                <span>04</span>
+                                <strong>Mooretown</strong>
+                                <button type="button" class="album-play-button" data-audio-toggle aria-label="Play or pause Mooretown">▶</button>
+                                <div class="album-progress-area">
+                                    <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Mooretown">
+                                    <div class="audio-time">
+                                        <span class="current-time">0:00</span>
+                                        <span class="duration">0:00</span>
+                                    </div>
+                                </div>
+                                <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/albums/echoes/mooretown.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                                </div>
+
+                                <div class="album-track" data-audio-control>
+                                    <span>05</span>
+                                    <strong>Hopes & Dreams</strong>
+                                    <button type="button" class="album-play-button" data-audio-toggle aria-label="Play or pause Test Hopes & Dreams">▶</button>
+                                    <div class="album-progress-area">
+                                        <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Test Hopes & Dreams">
+                                        <div class="audio-time">
+                                            <span class="current-time">0:00</span>
+                                            <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
+                                    <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/albums/echoes/hopes-and-dreams.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                                </div>
+
+                                <div class="album-track" data-audio-control>
+                                    <span>06</span>
+                                    <strong>Alliance</strong>
+                                    <button type="button" class="album-play-button" data-audio-toggle aria-label="Play or pause Alliance">▶</button>
+                                    <div class="album-progress-area">
+                                        <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Alliance">
+                                        <div class="audio-time">
+                                            <span class="current-time">0:00</span>
+                                            <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
+                                    <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/albums/echoes/alliance.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                                </div>
+
+                                <div class="album-track" data-audio-control>
+                                    <span>07</span>
+                                    <strong>Sob Stories</strong>
+                                    <button type="button" class="album-play-button" data-audio-toggle aria-label="Play or pause Sob Stories">▶</button>
+                                    <div class="album-progress-area">
+                                        <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Sob Stories">
+                                        <div class="audio-time">
+                                            <span class="current-time">0:00</span>
+                                            <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
+                                    <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/albums/echoes/sob-stories.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                                </div>
+                            </div>
+                        </details>
+                        <a href="music-library.html#album-1" class="music-primary-button album-explore-button">Explore Entire Album</a>
+                    </div>
+                </article>
+                
+                <article class="album-stage-card media-album-card">
+                    <div class="album-art-panel"><img src="music/covers/albums/sirtic.jpg" alt="Sirtic Album cover art"></div>
+                    <div class="album-details-panel">
+                        <p class="music-kicker">Album / EP 02</p>
+                        <h3>SIRTIC Album</h3>
+                        <p>Album inspired by a citris-like feeling.</p>
+                        <details class="album-dropdown">
+                            <summary>Play songs in this album</summary>
+                            <div class="album-track-list">
+                                <div class="album-track" data-audio-control>
+                                    <span>01</span>
+                                    <strong>Cloud9</strong>
+                                    <button type="button" class="album-play-button" data-audio-toggle aria-label="Play or pause Cloud9">▶</button>
+                                    <div class="album-progress-area">
+                                        <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Test Cloud9">
+                                        <div class="audio-time">
+                                            <span class="current-time">0:00</span>
+                                            <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
+                                    <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/albums/sirtic/cloud9.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                                </div>
+                                <div class="album-track" data-audio-control>
+                                    <span>02</span>
+                                    <strong>Over</strong>
+                                    <button type="button" class="album-play-button" data-audio-toggle aria-label="Play or pause Over">▶</button>
+                                    <div class="album-progress-area"><input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Test Over">
+                                        <div class="audio-time">
+                                            <span class="current-time">0:00</span>
+                                            <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
+                                    <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/albums/sirtic/over.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                                </div>
+                                <div class="album-track" data-audio-control>
+                                    <span>03</span>
+                                    <strong>Wonderland</strong>
+                                    <button type="button" class="album-play-button" data-audio-toggle aria-label="Play or pause Wonderland">▶</button>
+                                    <div class="album-progress-area">
+                                        <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Wonderland">
+                                        <div class="audio-time">
+                                            <span class="current-time">0:00</span>
+                                            <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
+                                    <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/albums/sirtic/wonderland.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                                </div>
+                                <div class="album-track" data-audio-control>
+                                    <span>04</span>
+                                    <strong>Citris</strong>
+                                    <button type="button" class="album-play-button" data-audio-toggle aria-label="Play or pause Citris">▶</button>
+                                    <div class="album-progress-area">
+                                        <input type="range" class="audio-progress" value="0" min="0" max="100" step="0.1" aria-label="Progress for Citris">
+                                        <div class="audio-time">
+                                            <span class="current-time">0:00</span>
+                                            <span class="duration">0:00</span>
+                                        </div>
+                                    </div>
+                                    <audio class="custom-audio" preload="metadata" controlsList="nodownload"><source src="music/audio/albums/sirtic/citris.wav" type="audio/wav">Your browser does not support the audio element.</audio>
+                                </div>
+                            </div>
+                        </details>
+                        <a href="music-library.html#album-2" class="music-primary-button album-explore-button">Explore Entire Album</a>
+                    </div>
+                </article>
+            
+            </div>
+        </section>
+
+        <!-- <section class="music-section section-content reveal-on-scroll" id="preview-videos">
+            <div class="music-section-heading split-heading with-view-more">
+                <div>
+                    <p class="music-kicker">Preview Videos</p>
+                    <h2>Visual samples.</h2>
+                </div>
+                <div class="section-actions">
+                    <p class="music-heading-note">Video cards scale to the shape of your media and scroll horizontally as the collection grows.</p>
+                    <a href="music-videos.html" class="music-secondary-button view-more-button">View More Videos</a>
+                </div>
+            </div>
+            <div class="video-preview-grid media-scroll video-scroll">
+                <article class="video-preview-card">
+                    <video controls preload="metadata" poster="music/covers/cover.jpg"><source src="music/videos/test.mp4" type="video/mp4">Your browser does not support the video element.</video>
+                    <h3>Preview Video 01</h3>
+                </article>
+                <article class="video-preview-card">
+                    <video controls preload="metadata" poster="music/covers/cover.jpg"><source src="music/videos/test.mp4" type="video/mp4">Your browser does not support the video element.</video>
+                    <h3>Preview Video 02</h3>
+                </article>
+            </div>
+        </section> -->
+
+        <section class="music-section section-content reveal-on-scroll" id="music-platforms">
+            <div class="music-callout platform-callout">
+                <p class="music-kicker">Listen Elsewhere</p>
+                <h2>Find me across music platforms.</h2>
+                <div class="platform-grid">
+                    <a href="https://www.bandlab.com/mellatriex" target="_blank" rel="noopener" class="platform-card">BandLab <span>Open Profile</span></a>
+                    <a href="https://open.spotify.com/user/31jhhdififpmprruqsgvi52bbqtm" target="_blank" rel="noopener" class="platform-card">Spotify <span>Open Artist Page</span></a>
+                    <a href="https://soundcloud.com/playhouse-717109169" target="_blank" rel="noopener" class="platform-card">SoundCloud <span>Open Profile</span></a>
+                    <a href="https://www.youtube.com/@mellatriex" target="_blank" rel="noopener" class="platform-card">YouTube <span>Open Channel</span></a>
+                    <a href="https://playhouseharmonies.bandcamp.com/" target="_blank" rel="noopener" class="platform-card">Bandcamp <span>Open Store</span></a>
+                    <a href="music-library.html" target="_self" rel="noopener" class="platform-card">Library <span>Go To Music Library</span></a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        
+    <footer class="site-footer">
+        <div class="section-content footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo-row">
+                    <img src="images/Initials.png" alt="Martel Bellamy logo">
+                    <strong>Martel Bellamy</strong>
+                </div>
+                <p>Creating through Art, Music, and Technology.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Links</h3>
+                <a href="index.html">Home</a>
+                <a href="art.html">Art</a>
+                <a href="music.html">Music</a>
+                <a href="stem.html">Projects</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <div class="social-lineup" aria-label="Social media links">
+                    <!-- <a href="#" class="social-icon" data-social="BandLab" aria-label="BandLab">
+                        <i class="fa-solid fa-wave-square" aria-hidden="true"></i>
+                    </a> -->
+                    <a href="https://www.linkedin.com/in/martelbellamy/" class="social-icon" data-social="LinkedIn" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://open.spotify.com/user/31jhhdififpmprruqsgvi52bbqtm" class="social-icon" data-social="Spotify" aria-label="Spotify">
+                        <i class="fa-brands fa-spotify" aria-hidden="true"></i>
+                    </a>
+                    <!-- <a href="#" class="social-icon" data-social="SoundCloud" aria-label="SoundCloud">
+                        <i class="fa-brands fa-soundcloud" aria-hidden="true"></i>
+                    </a> -->
+                    <a href="https://www.youtube.com/@tarrouz3r7" class="social-icon" data-social="YouTube" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                    </a>
+                    <!-- <a href="#" class="social-icon" data-social="Bandcamp" aria-label="Bandcamp">
+                        <i class="fa-brands fa-bandcamp" aria-hidden="true"></i>
+                    </a> -->
+                    <a href="https://www.instagram.com/mteezy07.02/" class="social-icon" data-social="Instagram" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <!-- <a href="#" class="social-icon" data-social="GitHub" aria-label="GitHub">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a> -->
+                    <a href="mailto:martelpb2007@gmail.com" class="social-icon" data-social="Email" aria-label="Email">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h3>Let's Work Together</h3>
+                <p>I am open to collaboration, internships, research, and creative opportunities.</p>
+                <button type="button" class="text-link-button" data-open-contact>Get in Touch -></button>
+            </div>
+        </div>
+        <p class="footer-bottom">© 2025 Martel Bellamy. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
+
+    <div class="contact-modal" id="contactModal" aria-hidden="true">
+            <div class="contact-backdrop" data-close-contact></div>
+            <section class="contact-dialog" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+                <button type="button" class="modal-close" data-close-contact aria-label="Close contact box">x</button>
+                <p class="section-kicker">Contact</p>
+                <h2 id="contactTitle">Get in Touch</h2>
+                <div class="contact-list">
+                    <a href="mailto:martelpb2007@gmail.com">martelpb2007@gmail.com</a>
+                    <span>Vanderbilt University</span>
+                    <span>Chicago, IL / Nashville, TN</span>
+                </div>
+                <form class="quick-email-form" id="quickEmailForm">
+                    <label for="emailName">Your Name</label>
+                    <input id="emailName" name="name" type="text" placeholder="Your name">
+                    <label for="emailMessage">Quick Message</label>
+                    <textarea id="emailMessage" name="message" rows="5" placeholder="Write a quick message..."></textarea>
+                    <button type="submit" class="modal-send">Open Email Draft</button>
+                </form>
+            </section>
+        </div>    
+        <script src="script.js"></script>
 </body>
 </html>
