@@ -3,79 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martel Bellamy</title>
+    <title>Martel Bellamy | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<body>
+<body class="home-page">
 
     <header class="site-header">
         <div class="section-content header-content">
             <div class="brand-group">
-                <button type="button" class="brand" aria-expanded="false">
+                <button type="button" class="brand" aria-expanded="false" aria-label="Open site navigation">
                     <div class="brand-mark">
-                        <img src="/images/Initials.png" alt="Logo">
+                        <img src="images/Initials.png" alt="Martel Bellamy logo">
                     </div>
-                    <h2 class="logo-text">Martel Bellamy</h2>
+                    <span class="brand-copy">
+                        <span class="logo-text">Martel Bellamy</span>
+                        <span class="brand-subtext">Multidisciplinary Portfolio</span>
+                    </span>
+                    <span class="brand-chevron" aria-hidden="true">▾</span>
                 </button>
 
-                <nav class="navbar">
+                <nav class="navbar" aria-label="Primary navigation">
                     <ul class="nav-menu">
                         <li><a href="index.html" class="nav-link">Home</a></li>
-                        <li><a href="art.html" class="nav-link">Art</a></li>
-                        <li><a href="music.html" class="nav-link">Music</a></li>
+                        <li class="nav-family"><a href="art.html" class="nav-link">Art</a><div class="nav-supplements"><a href="visual-library.html">Visual Library</a><a href="film-library.html">Films</a></div></li>
+                        <li class="nav-family"><a href="music.html" class="nav-link">Music</a><div class="nav-supplements"><a href="music-library.html">Library</a><a href="music-videos.html">Videos</a></div></li>
                         <li><a href="stem.html" class="nav-link">Projects</a></li>
                     </ul>
                 </nav>
             </div>
+
+            <div class="header-actions">
+                <button type="button" id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+                    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+                    <span class="theme-toggle-text">Dark</span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <main>
-        <h1>About Me</h1>
-
-        <div class="about-card">
-            <div class="about-photo-wrap">
-                <img src="images/pfp.jpg" alt="Martel Bellamy" class="about-photo">
+    <main class="home-main">
+        <section class="home-hero" id="hero" aria-label="Portfolio introduction">
+            <div class="hero-bg" aria-hidden="true">
+                <span class="hero-orb orb-one"></span>
+                <span class="hero-orb orb-two"></span>
+                <span class="hero-orb orb-three"></span>
             </div>
-            <div class="about-info">
-                <h2 class="about-name">Martel Bellamy</h2>
-                <ul class="about-facts">
-                    <li>
-                        <span class="fact-icon">🎓</span>
-                        <span><strong>Year:</strong> Sophomore</span>
-                    </li>
-                    <li>
-                        <span class="fact-icon">🏫</span>
-                        <span><strong>School:</strong> Vanderbilt University</span>
-                    </li>
-                    <li>
-                        <span class="fact-icon">🎨</span>
-                        <span><strong>Interests:</strong> Art, Photography, Music, & STEM</span>
-                    </li>
-                    <li>
-                        <span class="fact-icon">📍</span>
-                        <span><strong>Based in:</strong> Chicago, Il</span>
-                    </li>
-                </ul>
-                <p class="about-bio">
-                    Welcome to my portfolio. I'm a college student passionate in creating art and working with technology. This personal website contains a collection of most of the work that I've completed throughout highschool and college.
 
-                    <br><br>Contact Me: <a href="mailto:martelpb2007@gmail.com" target="_blank" title="Send an email">martelpb2007@gmail.com</a>
-                </p>
+            <div class="hero-inner section-content reveal-on-scroll">
+                <p class="hero-eyebrow">Multidisciplinary Creator</p>
+                <h1 class="hero-title">Martel Bellamy</h1>
+                <p class="hero-tagline">Creating through <span>Art</span>, <span>Music</span>, and <span>Technology</span>.</p>
+                <a href="#featured-pathways" class="hero-button">Explore My Work <span aria-hidden="true">↓</span></a>
             </div>
-        </div>
+        </section>
 
-        <div class="about-links">
-            <a href="art.html" class="about-pill">🖼️ Art & Photography</a>
-            <a href="music.html" class="about-pill">🎵 Music</a>
-            <a href="stem.html" class="about-pill">💻 Projects</a>
-        </div>
+        <section class="home-section pathway-section" id="featured-pathways">
+            <div class="section-content compact-center reveal-on-scroll">
+                <p class="section-kicker">Explore my world</p>
+                <h2 class="section-title">Three paths. One Creator.</h2>
+                <p class="section-intro">Move between my visual, sound, and engineering-focused works.</p>
 
+                <div class="pathway-grid">
+                    <a class="pathway-card art-card" href="art.html">
+                        <div class="pathway-image"></div>
+                        <span class="card-icon">ART</span>
+                        <h3>Art</h3>
+                        <p>Photography. Visual art. Future film.</p>
+                        <span class="pathway-link">Explore Art -></span>
+                    </a>
+
+                    <a class="pathway-card music-card" href="music.html">
+                        <div class="pathway-image"></div>
+                        <span class="card-icon">MUSIC</span>
+                        <h3>Music</h3>
+                        <p>Production. Composition. Sound.</p>
+                        <span class="pathway-link">Explore Music -></span>
+                    </a>
+
+                    <a class="pathway-card project-card" href="stem.html">
+                        <div class="pathway-image"></div>
+                        <span class="card-icon">TECH</span>
+                        <h3>Projects</h3>
+                        <p>Engineering. Code. Innovation.</p>
+                        <span class="pathway-link">Explore Projects -></span>
+                    </a>
+                </div>
+
+                <!-- <div class="featured-work">
+                    <p class="section-kicker">Featured Work</p>
+                    <div class="featured-grid">
+                        <a class="feature-tile photo-feature" href="art.html">
+                            <span>Featured Photo</span>
+                            <strong>Golden Turn</strong>
+                        </a>
+                        <a class="feature-tile music-feature" href="music.html">
+                            <span>Featured Track</span>
+                            <strong>Coming Soon</strong>
+                        </a>
+                        <a class="feature-tile project-feature" href="stem.html">
+                            <span>Featured Project</span>
+                            <strong>Portfolio Website</strong>
+                        </a>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+        <section class="home-section about-section" id="about">
+            <div class="section-content compact-center reveal-on-scroll">
+                <p class="section-kicker">About Me</p>
+                <h2 class="section-title">Creator. Explorer. Problem Solver.</h2>
+                <div class="about-card cinematic-card">
+                    <div class="about-photo-wrap">
+                        <img src="images/pfp.jpg" alt="Martel Bellamy" class="about-photo">
+                    </div>
+                    <div class="about-info">
+                        <h3>Martel Bellamy</h3>
+                        <p>I am a college student passionate about blending creativity with technology to create meaningful experiences and solve real-world problems. Whether behind the camera, in the studio, or writing code, I am always building and always learning.</p>
+                        <div class="about-facts-row">
+                            <span>Vanderbilt University</span>
+                            <span>Chicago, IL</span>
+                            <span>Art, Music, STEM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        
+    <footer class="site-footer">
+        <div class="section-content footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo-row">
+                    <img src="images/Initials.png" alt="Martel Bellamy logo">
+                    <strong>Martel Bellamy</strong>
+                </div>
+                <p>Creating through Art, Music, and Technology.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Links</h3>
+                <a href="index.html">Home</a>
+                <a href="art.html">Art</a>
+                <a href="music.html">Music</a>
+                <a href="stem.html">Projects</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <div class="social-lineup" aria-label="Social media links">
+                    <!-- <a href="#" class="social-icon" data-social="BandLab" aria-label="BandLab">
+                        <i class="fa-solid fa-wave-square" aria-hidden="true"></i>
+                    </a> -->
+                    <a href="https://www.linkedin.com/in/martelbellamy/" class="social-icon" data-social="LinkedIn" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://open.spotify.com/user/31jhhdififpmprruqsgvi52bbqtm" class="social-icon" data-social="Spotify" aria-label="Spotify">
+                        <i class="fa-brands fa-spotify" aria-hidden="true"></i>
+                    </a>
+                    <!-- <a href="#" class="social-icon" data-social="SoundCloud" aria-label="SoundCloud">
+                        <i class="fa-brands fa-soundcloud" aria-hidden="true"></i>
+                    </a> -->
+                    <a href="https://www.youtube.com/@tarrouz3r7" class="social-icon" data-social="YouTube" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                    </a>
+                    <!-- <a href="#" class="social-icon" data-social="Bandcamp" aria-label="Bandcamp">
+                        <i class="fa-brands fa-bandcamp" aria-hidden="true"></i>
+                    </a> -->
+                    <a href="https://www.instagram.com/mteezy07.02/" class="social-icon" data-social="Instagram" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <!-- <a href="#" class="social-icon" data-social="GitHub" aria-label="GitHub">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a> -->
+                    <a href="mailto:martelpb2007@gmail.com" class="social-icon" data-social="Email" aria-label="Email">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h3>Let's Work Together</h3>
+                <p>I am open to collaboration, internships, research, and creative opportunities.</p>
+                <button type="button" class="text-link-button" data-open-contact>Get in Touch -></button>
+            </div>
+        </div>
+        <p class="footer-bottom">© 2025 Martel Bellamy. All rights reserved.</p>
     </footer>
+
+    <div class="contact-modal" id="contactModal" aria-hidden="true">
+        <div class="contact-backdrop" data-close-contact></div>
+        <section class="contact-dialog" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+            <button type="button" class="modal-close" data-close-contact aria-label="Close contact box">x</button>
+            <p class="section-kicker">Contact</p>
+            <h2 id="contactTitle">Get in Touch</h2>
+            <div class="contact-list">
+                <a href="mailto:martelpb2007@gmail.com">martelpb2007@gmail.com</a>
+                <span>Vanderbilt University</span>
+                <span>Chicago, IL / Nashville, TN</span>
+            </div>
+            <form class="quick-email-form" id="quickEmailForm">
+                <label for="emailName">Your Name</label>
+                <input id="emailName" name="name" type="text" placeholder="Your name">
+                <label for="emailMessage">Quick Message</label>
+                <textarea id="emailMessage" name="message" rows="5" placeholder="Write a quick message..."></textarea>
+                <button type="submit" class="modal-send">Open Email Draft</button>
+            </form>
+        </section>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
