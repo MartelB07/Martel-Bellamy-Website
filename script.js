@@ -240,7 +240,7 @@
         { title: "Luminance", src: "music/audio/singles/luminance.mp3", description: "" },
         { title: "Legion", src: "music/audio/singles/legion.mp3", description: "" },
         { title: "Little Bit Of Spice", src: "music/audio/singles/little-bit-of-spice.mp3", description: "" },
-        { title: "Low-High Low-Fi", src: "music/audio/singles/low-high-low-fi.wav", description: "" },
+        { title: "Low-High Low-Fi", src: "music/audio/singles/low-high-low-fi.mp3", description: "" },
         { title: "Melodic", src: "music/audio/singles/melodic.mp3", description: "" },
         { title: "Phonk Mix", src: "music/audio/singles/phonk-mix.mp3", description: "" },
         { title: "Rising", src: "music/audio/singles/rising.mp3", description: "" },
