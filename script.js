@@ -265,7 +265,6 @@
         { title: "Phonk Mix", src: "music/audio/singles/phonk-mix.mp3", description: "" },
         { title: "Rising", src: "music/audio/singles/rising.mp3", description: "" },
         { title: "Together", src: "music/audio/singles/together.mp3", description: "" },
-        { title: "Wish me Luck", src: "music/audio/singles/wish-me-luck.mp3", description: "" },
         { title: "Dimensions", src: "music/audio/singles/dimensions.mp3", description: "" },
         { title: "Maybe Another Time", src: "music/audio/singles/maybe-another-time.mp3", description: "" }
     ];
