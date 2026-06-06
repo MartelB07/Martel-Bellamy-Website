@@ -34,7 +34,7 @@
     const navMenu = document.querySelector(".nav-menu");
 
     if (brandPill && navMenu) {
-        const canHover = window.matchMedia("(hover: hover)").matches;
+        const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
         let closeTimer = null;
 
         function openNav() {
@@ -59,9 +59,29 @@
             navMenu.addEventListener("mouseleave", scheduleClose);
         }
 
+        let handledTouchToggle = false;
+
+        function toggleNav() {
+            navMenu.classList.contains("open") ? closeNav() : openNav();
+        }
+
+        brandPill.addEventListener("pointerdown", (event) => {
+            if (event.pointerType === "mouse") return;
+
+            event.preventDefault();
+            handledTouchToggle = true;
+            toggleNav();
+        });
+
         brandPill.addEventListener("click", (event) => {
             event.preventDefault();
-            navMenu.classList.contains("open") ? closeNav() : openNav();
+
+            if (handledTouchToggle) {
+                handledTouchToggle = false;
+                return;
+            }
+
+            toggleNav();
         });
 
         document.addEventListener("click", (event) => {
@@ -233,14 +253,14 @@
 
     const randomTracks = [
         { title: "Wish Me Luck", src: "music/audio/singles/wish-me-luck.mp3", description: "" },
-        { title: "All I Have Is Me", src: "music/audio/singles/all-i-have-is-me.mp3", description: "" },
+        { title: "All I Have Is Me", src: "music/audio/singles/all-I-have-is-me.mp3", description: "" },
         { title: "Atlas", src: "music/audio/singles/atlas.mp3", description: "" },
         { title: "Beautiful", src: "music/audio/singles/beautiful.mp3", description: "" },
         { title: "Golden Gaurdian", src: "music/audio/singles/golden-gaurdian.mp3", description: "" },
         { title: "Luminance", src: "music/audio/singles/luminance.mp3", description: "" },
         { title: "Legion", src: "music/audio/singles/legion.mp3", description: "" },
         { title: "Little Bit Of Spice", src: "music/audio/singles/little-bit-of-spice.mp3", description: "" },
-        { title: "Low-High Low-Fi", src: "music/audio/singles/low-high-low-fi.wav", description: "" },
+        { title: "Low-High Low-Fi", src: "music/audio/singles/low-high-low-fi.mp3", description: "" },
         { title: "Melodic", src: "music/audio/singles/melodic.mp3", description: "" },
         { title: "Phonk Mix", src: "music/audio/singles/phonk-mix.mp3", description: "" },
         { title: "Rising", src: "music/audio/singles/rising.mp3", description: "" },
